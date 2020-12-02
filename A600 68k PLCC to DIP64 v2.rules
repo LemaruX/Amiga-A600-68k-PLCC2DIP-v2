@@ -1,0 +1,100 @@
+
+(rules PCB A600 68k PLCC to DIP64 v2
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 20535)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.5)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 203.2)
+    (clear 200.2)
+    (clear 101.6 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-VCC" "Via[0-1]_800:400_um" VCC
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    VCC "Via[0-1]_800:400_um-VCC"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 203.2)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(R1-Pad1)" "Net-(R2-Pad2)" /d13 /d15 /a22 /a19 /a17 /a15
+    /d12 /d14 /a23 /a21 /a20 /a18 /a16 /a14
+    /a12 /a10 /a8 /a6 /a4 /a2 "Net-(U1-Pad31)" /fc1
+    /~ipl0 /a13 /a11 /a9 /a7 /a5 /a3 /a1
+    /fc0 /fc2 /~ipl1 /~berr /e /~reset "Net-(U1-Pad18)" /~bgack
+    /~dtack /~ipl2 "Net-(U1-Pad23)" /~vma /~halt /clk /~bg /d10
+    /d8 /d6 /r~w /~uds /d0 /d2 /d4 /d11
+    /d9 /d7 /d5 /~lds /~as /d1 /d3 GND
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 203.2)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class VCC
+    VCC
+    (clearance_class VCC)
+    (via_rule VCC)
+    (rule
+      (width 609.6)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name MC68000_PLCC68)(type Legacy)(uri ${KIPRJMOD}/lib/MC68000_PLCC68.lib)(options "")(descr ""))
+  (lib (name MC68000_DIP64_SOCKET)(type Legacy)(uri ${KIPRJMOD}/lib/68000_DIP_SOCKET.lib)(options "")(descr ""))
+)
