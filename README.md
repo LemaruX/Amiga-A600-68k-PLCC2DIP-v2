@@ -1,5 +1,5 @@
 # Amiga-A600-68k-PLCC2DIP-v2
- This is a simple adaptor to allow the use of 64pin DIP CPU's and accelerators on an Amiga 600. It has been re-worked to give a smaller footprint, and maybe better suited for smaller accelerators or CPUs (a TF536 can still be used, but the socket needs to be mounted a certain way, see details below)
+ This is a simple adaptor to allow the use of 64pin DIP CPU's and accelerators on an Amiga 600. It has been re-worked from the v1 design, with the DIP socket rotated 180 degrees, and a smaller footprint that maybe better suited for smaller accelerators or CPUs (a TF536 can still be used, but the socket needs to be mounted a certain way, see details below)
 
 ![PLCC2DIPv2](Images/PLCC2DIPv2.jpg)
 
