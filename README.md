@@ -3,8 +3,6 @@
 
 ![PLCC2DIPv2](Images/PLCC2DIPv2.jpg)
 
-**PLEASE NOTE** This design has not currently been tested for fit with the TF536. I am currently waiting on my boards to be delivered to test them. It should otherwise be fine for use as uses the same schematic as the previous version. 
-
 ---
 
 ## Summary
