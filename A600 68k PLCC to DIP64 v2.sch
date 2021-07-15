@@ -115,7 +115,6 @@ Wire Wire Line
 Wire Wire Line
 	3050 6150 2950 6150
 Connection ~ 2950 6150
-NoConn ~ 3150 5200
 NoConn ~ 3650 5200
 $Comp
 L power:GND #PWR0104
@@ -168,7 +167,6 @@ Wire Wire Line
 Wire Wire Line
 	8200 950  8150 950 
 Connection ~ 8150 950 
-NoConn ~ 4750 4300
 Wire Wire Line
 	1550 4300 1000 4300
 Wire Wire Line
@@ -865,13 +863,13 @@ Text Label 3850 5500 1    50   ~ 0
 ~ipl2
 Text Label 3950 5500 1    50   ~ 0
 ~ipl1
-Text Label 4900 4400 0    50   ~ 0
+Text Label 5050 4400 2    50   ~ 0
 fc0
-Text Label 4900 4500 0    50   ~ 0
+Text Label 5050 4500 2    50   ~ 0
 fc1
-Text Label 4900 4600 0    50   ~ 0
+Text Label 5050 4600 2    50   ~ 0
 fc2
-Text Label 4900 4700 0    50   ~ 0
+Text Label 5050 4700 2    50   ~ 0
 ~ipl0
 Text Label 6800 1400 0    50   ~ 0
 clk
@@ -903,13 +901,13 @@ Text Label 6800 4800 0    50   ~ 0
 ~halt
 Text Label 6800 4900 0    50   ~ 0
 ~reset
-Text Label 9250 5500 0    50   ~ 0
+Text Label 9400 5500 2    50   ~ 0
 ~as
-Text Label 9250 5600 0    50   ~ 0
+Text Label 9400 5600 2    50   ~ 0
 ~uds
-Text Label 9250 5700 0    50   ~ 0
+Text Label 9400 5700 2    50   ~ 0
 ~lds
-Text Label 9250 5800 0    50   ~ 0
+Text Label 9400 5800 2    50   ~ 0
 r~w
 $Comp
 L Mechanical:MountingHole_Pad H1
@@ -953,6 +951,30 @@ Wire Wire Line
 Connection ~ 5300 6500
 Wire Wire Line
 	5300 6500 5300 6600
+Wire Wire Line
+	3150 5200 3150 5650
+Wire Wire Line
+	3150 5650 2750 5650
+Connection ~ 2750 5650
+Wire Wire Line
+	4750 4300 5250 4300
+Wire Wire Line
+	5250 4300 5250 4470
+Wire Wire Line
+	5250 4470 5520 4470
+Wire Wire Line
+	5520 4470 5520 4450
+$Comp
+L power:VCC #PWR?
+U 1 1 60F27F01
+P 5520 4450
+F 0 "#PWR?" H 5520 4300 50  0001 C CNN
+F 1 "VCC" H 5535 4623 50  0000 C CNN
+F 2 "" H 5520 4450 50  0001 C CNN
+F 3 "" H 5520 4450 50  0001 C CNN
+	1    5520 4450
+	1    0    0    -1  
+$EndComp
 Wire Bus Line
 	10450 3900 10450 5400
 Wire Bus Line
