@@ -15,6 +15,8 @@ To date it has only been tested successfully with the devices listed below. If a
 - Terriblefire TF536 (This requires a specific firmware to work on the A600 which you can find [here](https://www.exxoshost.co.uk/forum/viewtopic.php?f=93&t=3438))
 - Matzes 68EC020TK card (Although this device is reported to work, it is too large to close the A600 case when fitted)
 
+- **PiStorm** - PiStorm support is currently limited, as PiStorm itself is not currently A600 compatible. Better A600 support should come in future firmware. There may also be issues with undervoltage errors on the Pi when using these adaptors. [Abrugsch](https://github.com/abrugsch) has tweaked the VCC handling which should help greatly, but the main limitation is the size of the traces to the CPU on the motherboard itself. A future version of the adaptor is planned to allow external power to be added to resolve this. 
+
 **PLEASE NOTE** If using with a Terriblefire 536 in the Amiga 600, you must use a certain revision [firmware](https://www.exxoshost.co.uk/forum/viewtopic.php?f=93&t=3438). Unfortunately due to the size of the TF536, to allow for it to fit inside the A600 and the case to be fully closed, you must solder the 64pin DIP socket (or pin strip) with the upper most row of pins higher than the bottom row. Unlike the previous version, you can do this by using a row of pin strip underneath the top row of pins on the DIP socket as shown in the images below. This allows the TF536 to sit at the correct angle so that the rear of the card sits slightly over the lip at the back of the A600 case.
 
 ![DIP Socket1](Images/DIP-Socket1.jpg)![DIP Socket2](Images/DIP-Socket2.jpg)
@@ -43,6 +45,12 @@ To achieve the best fit on the A600 CPU, please use a good quality PLCC socket w
 There are also two mounting holes, which can be used to attach it to the A600 motherboard using the HDD mounting holes. For this, I use M1.6 x 16mm screws pushed through from underneath the motherboard. Do not tighten the nuts up too much as this can damage either the adaptor or your motherboard. I use 3D printed spacers about 8.3mm in height to support the board (this is based on the height of the PLCC socket after it has been modified), but any spacer the correct size will suffice. I would advise measuring the height of the PLCC socket (after it has been modified accordingly) and using spacers of an equal height. 
 
 I have included the STL files for the spacers that I use in the STL folder. To prevent the nuts coming loose, I use a small dab of nail varnish on the threads once they have been tightened as required. This prevents them from coming loose, but still allows for them to be easily removed. I have also included an STL file for a small thumbscrew part, which you can push the M1.6 nuts into before placing them on the screws. By using these, it is much easier to tighten and remove the nuts if/when required, without the use of any additional tools.
+
+---
+
+## To Do
+
+A four layer version of the adaptor is planned which will also allow addtional power to be applied.
 
 ---
 
