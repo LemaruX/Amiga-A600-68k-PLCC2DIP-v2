@@ -1,12 +1,16 @@
 # Amiga-A600-68k-PLCC2DIP-v2
- This is a simple adaptor to allow the use of 64pin DIP CPU's and accelerators on an Amiga 600. It has been re-worked from the v1 design, with the DIP socket rotated 180 degrees, and a smaller footprint that maybe better suited for smaller accelerators or CPUs (a TF536 can still be used, but the socket needs to be mounted a certain way, see details below)
+ This is a simple adaptor to allow the use of 64pin DIP CPU's and accelerators on an Amiga 600. It has been re-worked to give a smaller footprint, and maybe better suited for smaller accelerators or CPUs (a TF536 can still be used, but the socket needs to be mounted a certain way, see details below)
 
 ![PLCC2DIPv2](Images/PLCC2DIPv2.jpg)
+
+**PLEASE NOTE** This design has not currently been tested for fit with the TF536. I am currently waiting on my boards to be delivered to test them. It should otherwise be fine for use as uses the same schematic as the previous version. 
 
 ---
 
 ## Summary
 This is a basic adaptor that disables the on-board 68000 on an Amiga 600, and provides a 64pin DIP socket to allow you to connect a 64pin CPU or an A500 accelerator card. It is based on an idea by [Kludge](https://gitlab.com/kludge) and a modified version of his [Ice Scraper](https://gitlab.com/kludge/a600-ice-scraper) breakout board. 
+
+**Rev B Update** - The board has now been updated to a 4-layer design. It also includes a floppy power connector to provide additional power. **DO NOT use this connector for powering any devices, it is ONLY for providing additional power to the adaptor. ONLY apply power from the same power source that is powering the Amiga (E.g. the floppy power connector). DO NOT USE AN EXTERNAL POWER SUPPLY.** 
 
 To date it has only been tested successfully with the devices listed below. If anyone tests the adaptor successfully on another device, then please let me know and I can update the list.
 
@@ -15,7 +19,7 @@ To date it has only been tested successfully with the devices listed below. If a
 - Terriblefire TF536 (This requires a specific firmware to work on the A600 which you can find [here](https://www.exxoshost.co.uk/forum/viewtopic.php?f=93&t=3438))
 - Matzes 68EC020TK card (Although this device is reported to work, it is too large to close the A600 case when fitted)
 
-- **PiStorm** - PiStorm support is currently limited, as PiStorm itself is not currently A600 compatible. Better A600 support should come in future firmware. There may also be issues with undervoltage errors on the Pi when using these adaptors. [Abrugsch](https://github.com/abrugsch) has tweaked the VCC handling which should help greatly, but the main limitation is the size of the traces to the CPU on the motherboard itself. A future version of the adaptor is planned to allow external power to be added to resolve this. 
+- PiStorm - **NOTE** The PiStorm board has been tested, however the A600 is currently not fully supported with the current Proto3 CPLD firmware. 
 
 **PLEASE NOTE** If using with a Terriblefire 536 in the Amiga 600, you must use a certain revision [firmware](https://www.exxoshost.co.uk/forum/viewtopic.php?f=93&t=3438). Unfortunately due to the size of the TF536, to allow for it to fit inside the A600 and the case to be fully closed, you must solder the 64pin DIP socket (or pin strip) with the upper most row of pins higher than the bottom row. Unlike the previous version, you can do this by using a row of pin strip underneath the top row of pins on the DIP socket as shown in the images below. This allows the TF536 to sit at the correct angle so that the rear of the card sits slightly over the lip at the back of the A600 case.
 
@@ -35,6 +39,8 @@ Devices that have been tested and do **NOT** work are listed below. Again, pleas
 | U2 |  | DIP64 Socket | |
 | R1 | 220R | 0805 | |
 | R2 | 1k | 0805 | |
+| C1, C2, C3, C4, C5 | 100nf | 0805 | |
+| J1 |  | 171826-4 | TE Connectivity floppy power header |
 
 ---
 
@@ -48,24 +54,18 @@ I have included the STL files for the spacers that I use in the STL folder. To p
 
 ---
 
-## To Do
-
-A four layer version of the adaptor is planned which will also allow addtional power to be applied.
-
----
-
 ## License
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International License][cc-by-nc-sa].
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 ---
 
